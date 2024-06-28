@@ -170,7 +170,10 @@ ChatGPT
         # 主要是清理用户云盘或机器磁盘上的文件，至于安装的包，或是用户在使用应用
         # 产生的其他文件，则可选择性处理。一般来说直接用父类的逻辑即可。
         # 父类会先调用 close，然后再删除 install_directory
-
+        self.execute_command(
+            f"sudo rm -rf {self.cfg.source_directory}",
+            '/home/featurize/app',
+        ) 
         # TODO: 卸载的逻辑
         super().uninstall()
 
