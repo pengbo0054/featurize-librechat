@@ -120,8 +120,8 @@ ChatGPT
         self.execute_command(
             f"git clone https://github.com/pengbo0054/LibreChat.git"
         )
-        self.execute_command("docker compose pull", self.cfg.source_directory)
         self.execute_command("cp .env.example .env", self.cfg.source_directory)
+        self.execute_command("docker compose pull", self.cfg.source_directory)
         
         def append_line_to_file(file_path, line):
             with open(file_path, 'a', encoding='utf-8') as file:
